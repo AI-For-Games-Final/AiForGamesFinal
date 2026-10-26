@@ -1,3 +1,17 @@
+Slime Pirate
+You are a slime pirate captain. Your crew is on the verge of mutiny, and you must talk them out of it. You will interact with slime crewmates that run off an LLM Chatbot. You can type responses to talk them down. Based on your responses, your crewmates will react accordingly, and might be more or less likely to mutiny. At the end of the simulation various stats will be displayed showing your performance and how you affected your crew.
+
+https://docs.google.com/document/d/1tDTTCz2blK_m_sBxLQbq7kmru4xi85osvfdbF_9tuyI/edit?tab=t.0#heading=h.pme4s8tv68a1
+
+Iko - Narrative Designer
+Cole & Duncan - Nextjs Backend Learning
+Jill - Dialogue
+Luke - Miscellaneous Development
+
+Publish Platform: Itch.io
+
+
+
 # Unity 6 CI/CD Boilerplate with GitHub Actions
 
 A Unity 6000.x project that teaches you proper CI/CD on GitHub:
