@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -29,6 +30,12 @@ public class DialogueManager : MonoBehaviour
     public void ReadDialogue(Dialogue dialogue)
     {
         Debug.Log("Reading dialogue");
-        DialogueUI.instance.Display(this, dialogue);
+        DialogueUI.instance.DisplayDialogue(this, dialogue);
+		DialogueUI.instance.DisplayResponse();
+	}
+
+    public void ReadResponse(InputField inputField)
+    {
+        
     }
 }

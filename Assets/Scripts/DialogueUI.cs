@@ -8,11 +8,15 @@ public class DialogueUI : UIGroup
 {
     [HideInInspector] public static DialogueUI instance;
 	TextMeshProUGUI _textTF;
-	List<Button> _responseButtons = new List<Button>();
+	//List<Button> _responseButtons = new List<Button>();
+	TMP_InputField _responseInput;
+
 
 	private void Awake()
 	{
-		_responseButtons = GetComponentsInChildren<Button>().ToList();
+		//_responseButtons = GetComponentsInChildren<Button>().ToList();
+		_responseInput = GetComponentInChildren<TMP_InputField>();
+		Debug.Log($"Response input:{_responseInput}");
 		_textTF = GetComponentInChildren<TextMeshProUGUI>();
 	}
 
@@ -23,7 +27,7 @@ public class DialogueUI : UIGroup
 		if (instance == null)
 			instance = this;
 	}
-	public override void Display(Component sender, object data)
+	public override void DisplayDialogue(Component sender, object data)
 	{
 		SetCanvasGroup(true);
 
@@ -31,7 +35,7 @@ public class DialogueUI : UIGroup
 
 
 
-		for (int i = 0; i < _responseButtons.Count; i++)
+		/*for (int i = 0; i < _responseButtons.Count; i++)
 		{
 			_responseButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = "";
 			_responseButtons[i].onClick.RemoveAllListeners();
@@ -56,6 +60,12 @@ public class DialogueUI : UIGroup
 				Debug.Log($"Index is {i}, Will display {choices[i]._response}");
 
 			}
-		}
+		}*/
+	}
+
+	public void DisplayResponse()
+	{
+		_responseInput.gameObject.SetActive(true);
+		_responseInput.text = "";
 	}
 }

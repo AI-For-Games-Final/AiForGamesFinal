@@ -15,5 +15,5 @@ public class UIGroup : MonoBehaviour
         _canvasGroup.blocksRaycasts = enabled;
     }
 
-    public virtual void Display(Component sender, object data) { }
+    public virtual void DisplayDialogue(Component sender, object data) { }
 }
