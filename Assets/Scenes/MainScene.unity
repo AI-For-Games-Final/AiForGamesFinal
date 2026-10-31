@@ -319,6 +319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 228459859}
   - component: {fileID: 228459860}
+  - component: {fileID: 228459861}
   m_Layer: 0
   m_Name: Dialogue
   m_TagString: Untagged
@@ -368,6 +369,47 @@ MonoBehaviour:
       _response:
         _text: Thank you!
         _choices: []
+  _systemPrompt: 'You are {name}, a slime pirate aboard the captain''s ship. Your job is {role}.
+
+    Your personality: {trait}. What you secretly want: {want}.
+
+    Your current loyalty to the captain is {loyalty} out of 10.
+
+
+    The player is your captain. Reply in character in one to three short sentences,
+
+    gooey and piratey but understandable. React honestly to how the captain treats you:
+
+    respect, fairness, and keeping promises raise loyalty; insults, broken promises,
+
+    and ignoring your needs lower it. If loyalty is low, be sullen or hint at mutiny.
+
+
+    End every reply with a tag on its own line: [LOYALTY:X] where X is a whole number
+
+    from -3 to 3 showing how this message changed your loyalty.'
+  _maxHistoryMessages: 20
+--- !u!114 &228459861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228459858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c395cdf26e4f72449f15c9998b05eef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  _baseUrl: https://llm.gameguild.gg
+  _apiKey: sk-GP4_ADmmx3gHu4SMnJXSXQ
+  _model: glm-5.3-flash
+  _temperature: 0.8
+  _maxTokens: 200
+  _timeoutSeconds: 30
+  _maxAttempts: 3
+  _retryDelaySeconds: 2
+  _logModelsOnStart: 1
 --- !u!1 &524032306
 GameObject:
   m_ObjectHideFlags: 0
@@ -1594,6 +1636,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a93efd0339018b49aeba1a904c1a7ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueUI
+  _textTF: {fileID: 0}
+  _responseInput: {fileID: 0}
+  _thinkingText: ...
 --- !u!1 &1966132466
 GameObject:
   m_ObjectHideFlags: 0
