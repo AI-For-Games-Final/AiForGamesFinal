@@ -5,8 +5,6 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
 
-// llm.gameguild.gg is a LiteLLM proxy, which speaks the OpenAI chat-completions format.
-
 [Serializable]
 public class ChatMessage
 {
@@ -41,16 +39,17 @@ public class LLMClient : MonoBehaviour
     [HideInInspector] public static LLMClient instance;
 
     [SerializeField] string _baseUrl = "https://llm.gameguild.gg";
-    [SerializeField] string _apiKey = "";
+    [SerializeField] string _apiKey = ""; // Leave blank when shared with client
     [Tooltip("Must match a model name the proxy exposes. Tick 'Log Models On Start' to see the list.")]
     [SerializeField] string _model = "";
-    [SerializeField, Range(0f, 2f)] float _temperature = 0.8f;
+    [SerializeField, Range(0f, 2f)] float _temperature = 0.8f; // Changes how the ai responds 0-2, higher numbers means more random responses
     [SerializeField] int _timeoutSeconds = 30;
     [Tooltip("How many times to try when the server is busy or times out.")]
     [SerializeField] int _maxAttempts = 3;
     [Tooltip("Wait before retrying; grows each attempt (2s, 4s, ...).")]
     [SerializeField] float _retryDelaySeconds = 2f;
     [SerializeField] bool _logModelsOnStart = false;
+    [Tooltip("See available models in console")]
 
     string Url(string path) => _baseUrl.TrimEnd('/') + path;
 
@@ -76,13 +75,13 @@ public class LLMClient : MonoBehaviour
             yield break;
         }
 
-        var body = new ChatRequest
+        var body = new ChatRequest // This is the structure that needs to be given to the ai
         {
             model = _model,
             messages = messages,
             temperature = _temperature,
         };
-        byte[] json = Encoding.UTF8.GetBytes(JsonUtility.ToJson(body));
+        byte[] json = Encoding.UTF8.GetBytes(JsonUtility.ToJson(body)); // This sends the data to the website
 
         for (int attempt = 1; attempt <= _maxAttempts; attempt++)
         {
