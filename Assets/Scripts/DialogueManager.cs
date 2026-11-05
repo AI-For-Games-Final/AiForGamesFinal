@@ -35,7 +35,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogueWith(SimCharacter character)
     {
         string prompt = _systemPrompt +
-            $"\nYour name is {character.m_name} and you work in {character.m_PositionName}.";
+            $"\nYour name is {character.m_name} and you work in {character.m_Personality}.";
         ResetConversation(prompt);
         ReadDialogue(_startDialogue);
         if (!string.IsNullOrEmpty(_startDialogue.GetText()))

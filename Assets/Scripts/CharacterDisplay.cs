@@ -16,7 +16,7 @@ public class CharacterDisplay : MonoBehaviour
     void Update()
     {
         mPortrait.color = CharacterManager.FindSimCharacter(mIndex).m_IdColor;
-        mRoleText.text = CharacterManager.FindSimCharacter(mIndex).m_PositionName.ToString();
+        mRoleText.text = CharacterManager.FindSimCharacter(mIndex).m_Personality.ToString();
         mNameText.text = CharacterManager.FindSimCharacter(mIndex).m_name;
     }
 }
