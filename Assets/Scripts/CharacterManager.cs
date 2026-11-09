@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.UI;
+using TMPro;
 
 public class SimCharacter
 {
@@ -19,6 +21,8 @@ public class CharacterManager : MonoBehaviour
     private static int currentIndexID;
     [SerializeField] GameObject characterDisplayerInput, characterDisplayPrefabInput;
     [SerializeField] private string[] firstNamesInput, lastNamesInput;
+    [SerializeField] TMP_Text interactionsLeftText;
+    public static int interactionsLeft = 10;
     static string[] firstNames, lastNames;
 
     public static GameObject characterDisplayer, characterDisplayPrefab;
@@ -58,7 +62,7 @@ public class CharacterManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        interactionsLeftText.text = "Interactions Left: " + interactionsLeft;
     }
 
     public static void CreateNewSimCharacter() //Creates a new sim character, sets random values for the sim character, adds that sim character to the public character list, then creates the need display UI

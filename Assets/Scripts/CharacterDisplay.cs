@@ -9,7 +9,7 @@ public class CharacterDisplay : MonoBehaviour
     [SerializeField] TMP_Text mNameText, mRoleText;
     void Start()
     {
-        transform.localPosition = new Vector3(0.0f,360.0f - (CharacterManager.FindSimCharIndexPosition(mIndex) * 100.0f),0.0f);
+        transform.localPosition = new Vector3(0.0f,320.0f - (CharacterManager.FindSimCharIndexPosition(mIndex) * 20.0f),0.0f);
     }
 
     // Update is called once per frame
