@@ -34,8 +34,7 @@ public class DialogueManager : MonoBehaviour
     // Optional: talk to one of your sim characters, using their name and role.
     public void StartDialogueWith(SimCharacter character)
     {
-        string prompt = _systemPrompt +
-            $"\nYour name is {character.m_name} and you work in {character.m_Personality}.";
+        string prompt = SetPromptBasedOnCurrentCharacter();
         ResetConversation(prompt);
         ReadDialogue(_startDialogue);
         if (!string.IsNullOrEmpty(_startDialogue.GetText()))
@@ -108,5 +107,10 @@ public class DialogueManager : MonoBehaviour
         // Index 0 is the system prompt; remove the oldest messages after it.
         while (_history.Count > _maxHistoryMessages + 1)
             _history.RemoveAt(1);
+    }
+
+    string SetPromptBasedOnCurrentCharacter()
+    {
+        return _systemPrompt + $"\n. Your actual name is " + CharacterManager.simCharIndex[OverworldManager.currentTalkID].m_name + ". Your actual personality is that of a " + CharacterManager.simCharIndex[OverworldManager.currentTalkID].m_Personality.ToString() + " on the crew of a slime pirate ship. \n You're currently feeling really " + CharacterManager.simCharIndex[OverworldManager.currentTalkID].m_Emotion.ToString();
     }
 }

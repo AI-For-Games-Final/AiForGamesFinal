@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OverworldCharacter : MonoBehaviour
 {
@@ -18,6 +19,12 @@ public class OverworldCharacter : MonoBehaviour
     private void OnMouseDown()
     {
         CharacterManager.interactionsLeft -= 1;
-        print("You just clicked on " + CharacterManager.FindSimCharacter(mID).m_name);
+        CharacterManager.ClearIndex();
+        if (CharacterManager.interactionsLeft < 0)
+        {
+            SceneManager.LoadScene("EndOfSim");
+        }
+        OverworldManager.currentTalkID = mID;
+        GameObject.Find("Dialogue").GetComponent<DialogueManager>().StartDialogue();
     }
 }

@@ -106,4 +106,9 @@ public class CharacterManager : MonoBehaviour
         }
         return -1;
     }
+
+    public static void ClearIndex()
+    {
+        simCharIndex.Clear();
+    }
 }

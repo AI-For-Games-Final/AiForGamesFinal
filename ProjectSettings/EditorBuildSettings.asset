@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/EndOfSim.unity
+    guid: 4a9e3c2d7a857234391b0e1bbc9bd135
   m_configObjects: {}

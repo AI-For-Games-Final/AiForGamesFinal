@@ -3,6 +3,7 @@ using UnityEngine;
 public class OverworldManager : MonoBehaviour
 {
     [SerializeField] GameObject overworldSimChar;
+    public static int currentTalkID;
     void Start()
     {
         for(int i = 0; i < CharacterManager.simCharIndex.Count; i++)
