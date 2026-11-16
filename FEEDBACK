@@ -1,0 +1,85 @@
+Bug Report
+LLM Down (epic fail)
+Remaining conversations decrease on click, regardless of whether a conversation is currently in progress. Should only go down if you click on slime when a conversation is not happening - Fix Now, easy for players to miss content this way Gameplay Loop
+Set up UI canvas to scale with screen size, as of the moment it doesn’t, causing the UI to either be too big or too small - Fix Now, easy quality of life change Quality of Life
+
+
+
+Tester One
+1) I cannot answer this question as I only got the 'slime did not hear you response' while playtesting. I am not sure why as I tried a variety of prompting sentences and reloaded the itch page multiple times
+
+2) 1, It is pretty easy to tell how many replies you had left due to the UI on the left side of the screen. Although I noticed that no matter how many times I tried to talk to a slime the interaction counter would never decrease after the first time.
+
+3) I could not test this as I could not get a reply from the slimes
+
+4) same thing as question three
+
+5) same thing as above
+
+6) I couldn't get the slimes to hear me and the build would often not register my input when I clicked on a slime.
+
+Tester Two
+1. To be honest, when I played it the slimes did not seem to talk back and I mainly just got the response that they did not hear what I said, so I can not really answer this 
+
+2. This I could see just fine around a 3 or 4
+
+3. To be honest, when I played it the slimes did not seem to talk back and I mainly just got the response that they did not hear what I said, so I can not really answer this
+
+4. To be honest, when I played it the slimes did not seem to talk back and I mainly just got the response that they did not hear what I said, so I can not really answer this so for me it was hard
+
+5. It did not change, sadly, because I could not interact with them 
+
+6. Umm, none besides the fact that the slime would not respond/react to anything that I was saying 
+
+Something that I will say is that it looks good and is pretty easy to interact with just for some reason, the talking aspect did not work for me.
+
+Tester Three 
+1) Any time I tried to test, my typed in text says that the Slimes couldn't hear me, which i've been told means that the LLM thing is down or something. So I can't answer 1 accurately
+
+2) 0, the indicator in the top left told me exactly how many more attempts I had
+
+3) I also can't answer this questions as I couldn't get the slimes to answer me
+
+4) I can't answer this as well for the reason listed above
+
+5) See above
+
+6) I noticed that if I had clicked a slime and then click another slime without answering, the text box disappears, but my # of responses goes down by 1. When clicking on the first slime, the # of responses also decreases, so it feels like I am loosing an interaction. I also think that clicking on the slime shouldn't be want decrease the number of responses and it should be the entering of text that reduces the number of responses.
+
+Tester Four 
+Whenever I tried to chat with the slimes they were never able to hear me.
+
+0, the number in the top left was very visible and clear
+
+I wasn't able to chat with the slimes
+
+Same as above
+
+Same as above
+
+Other than the slimes not being able to hear me I don't think I encountered any other bugs.
+
+Tester Five
+1. The slimes never responded to me. I always got the "(They didn't seem to hear you. Try again.)" text. 
+2. I could easily tell how many interactions I had left (4).
+3. Sadly due to the slimes being unable to respond, I could not see how much personality each one had.
+4. Again, due to the unresponsiveness of the slimes, I have nothing to provide for this question.
+5. Repeat answer of question 4.
+6. The only bug I noticed was the the inability to get a response from the slimes. I don't know if that was because the LLM was down or if there was an actual bug happening. 
+
+I did notice that the User Interface did not scale properly with the screen size. When I first opened the itch page, I was confused at first until I full screened it. The slimes and background do scale properly with screen size.
+
+Tester Six
+*NOTE: when I initially tested this the LLM seemed to be down, as all I got was the "They didn't seem to hear you" line, I'll try to test again at a later time
+
+1) TBD
+
+2) 0, I thought the interactions left text was very easy to see
+
+3) TBD
+
+4) TBD
+
+5) TBD
+
+6) LLM issues aside, I didn't find any bugs
