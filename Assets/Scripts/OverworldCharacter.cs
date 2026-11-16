@@ -19,10 +19,10 @@ public class OverworldCharacter : MonoBehaviour
     private void OnMouseDown()
     {
         CharacterManager.interactionsLeft -= 1;
-        CharacterManager.ClearIndex();
         if (CharacterManager.interactionsLeft < 0)
         {
             SceneManager.LoadScene("EndOfSim");
+            CharacterManager.ClearIndex();
         }
         OverworldManager.currentTalkID = mID;
         GameObject.Find("Dialogue").GetComponent<DialogueManager>().StartDialogue();

@@ -38,7 +38,7 @@ public class LLMClient : MonoBehaviour
 {
     [HideInInspector] public static LLMClient instance;
 
-    [SerializeField] string _baseUrl = "https://llm.gameguild.gg";
+    [SerializeField] string _baseUrl = "http://169.254.83.107:3000/api";
     [SerializeField] string _apiKey = ""; // Leave blank when shared with client
     [Tooltip("Must match a model name the proxy exposes. Tick 'Log Models On Start' to see the list.")]
     [SerializeField] string _model = "";
@@ -69,12 +69,6 @@ public class LLMClient : MonoBehaviour
 
     public IEnumerator SendChat(List<ChatMessage> messages, Action<string> onSuccess, Action<string> onError)
     {
-        if (string.IsNullOrEmpty(_apiKey) || string.IsNullOrEmpty(_model))
-        {
-            onError?.Invoke("LLMClient needs an API key and a model name set in the Inspector.");
-            yield break;
-        }
-
         var body = new ChatRequest // This is the structure that needs to be given to the ai
         {
             model = _model,
@@ -89,12 +83,11 @@ public class LLMClient : MonoBehaviour
             string error = null;
             bool retryable = false;
 
-            using (var req = new UnityWebRequest(Url("/v1/chat/completions"), "POST"))
+            using (var req = new UnityWebRequest(_baseUrl, "POST"))
             {
                 req.uploadHandler = new UploadHandlerRaw(json);
                 req.downloadHandler = new DownloadHandlerBuffer();
                 req.SetRequestHeader("Content-Type", "application/json");
-                req.SetRequestHeader("Authorization", "Bearer " + _apiKey);
                 req.timeout = _timeoutSeconds;
 
                 yield return req.SendWebRequest();

@@ -384,14 +384,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c395cdf26e4f72449f15c9998b05eef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  _baseUrl: https://llm.gameguild.gg
-  _apiKey: sk-GP4_ADmmx3gHu4SMnJXSXQ
-  _model: glm-5.3-flash
+  _baseUrl: http://169.254.83.107:3000/api
+  _apiKey: 
+  _model: 
   _temperature: 0.8
   _timeoutSeconds: 30
   _maxAttempts: 3
   _retryDelaySeconds: 2
-  _logModelsOnStart: 1
+  _logModelsOnStart: 0
 --- !u!1 &524032306
 GameObject:
   m_ObjectHideFlags: 0
