@@ -384,7 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c395cdf26e4f72449f15c9998b05eef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  _baseUrl: http://169.254.83.107:3000/api
+  _baseUrl: https://gpr-340-llm-backend.vercel.app/api
   _apiKey: 
   _model: 
   _temperature: 0.8
